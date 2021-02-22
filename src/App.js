@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import styled from 'styled-components';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrap>
+
+      <Header>
+        <TextField label="Search for memes" variant="outlined" style={{width:'calc(100% - 110px)'}} />
+        <Button variant="contained" color="primary" style={{height:55, marginLeft:10, width:100}}>
+          Search
+        </Button>
+      </Header>
+
+      <Body>
+
+      </Body>
+
+    </Wrap>
   );
 }
+
+const Wrap = styled.div`
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  height:100vh;
+`
+
+const Header = styled.header`
+  width:100%;
+  min-height:50px;
+  padding: 10px;
+  box-sizing:border-box;
+`
+
+const Body = styled.div`
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  flex:1;
+  overflow:auto;
+`
 
 export default App;
